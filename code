@@ -1,0 +1,20 @@
+function extractEachKth(inputArray, k) {
+    //records the length of the array
+    let counter = inputArray.length;
+    //shortens the distance of having to remove each item in the array
+    if(k == 1){
+        return [];
+    }
+    //records the steps that are being taken to arrive to k
+    let count = 1;
+    //loop removes every kth item in the array
+    for(let i = 0;i!=counter;i++){
+        //this is where the kth item is removed
+        if(count == k ){
+            inputArray.splice(i,1);
+            count = 1;
+        }
+        count ++;
+    }
+    return inputArray;
+}
